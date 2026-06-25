@@ -1,0 +1,398 @@
+  :root{
+    --bg:#000000;
+    --fg:#ffffff;
+    --muted:#C4C4C4;
+    --dim:#565656;
+    --accent:#F87060;       /* light coral — for coral on DARK backgrounds */
+    --accent-ink:#b35145;   /* darker coral — for coral text/strokes on LIGHT (cream) backgrounds (accessible contrast) */
+    --line:#1c1c1c;
+    --head:'Urbanist',sans-serif;
+    --body:'Open Sans',sans-serif;
+    --maxw:1240px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--fg);
+    font-family:var(--body);
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  /* subtle grain/atmosphere so the black isn't dead flat */
+  body::before{
+    content:"";
+    position:fixed;inset:0;
+    background:radial-gradient(1200px 700px at 78% -8%, rgba(248,112,96,0.10), transparent 60%);
+    pointer-events:none;z-index:0;
+  }
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(20px,4vw,30px);position:relative;z-index:1;animation:pagein .7s ease both}
+  a{color:inherit;text-decoration:none}
+
+  /* ---------- top bar ---------- */
+  .topbar{display:flex;justify-content:space-between;align-items:center;padding:30px 0 18px;
+          border-bottom:1px solid rgba(255,255,255,.2);position:sticky;top:0;z-index:40;background:var(--bg);will-change:transform}
+  .brand{font-family:var(--head);font-weight:600;font-size:18px;letter-spacing:.2px}
+  .brand b{color:var(--accent);font-weight:700}
+  .topnav{display:flex;gap:26px;font-size:14px;color:#ffffff}
+  .topnav a{transition:color .25s}
+  .topnav a:hover{color:var(--accent)}
+  .nav-toggle{display:none}
+
+  /* ---------- hero ---------- */
+  .hero{display:grid;grid-template-columns:1.9fr .8fr;gap:clamp(24px,3vw,40px);
+        align-items:start;padding:clamp(80px,14vh,150px) 0 70px}
+  .hl{font-family:var(--head);font-weight:600;line-height:1.02;letter-spacing:-.02em;
+      font-size:clamp(40px,7vw,90px)}
+  .hl-l1,.hl-l2{display:block;will-change:transform}
+  .hl .rotate{color:var(--accent);display:inline-block;vertical-align:top;
+            transition:opacity .46s cubic-bezier(.4,0,.2,1), filter .46s cubic-bezier(.4,0,.2,1)}
+  .hl .rotate.swap{opacity:0;filter:blur(5px)}
+  .now{display:flex;align-items:center;gap:10px;margin-top:34px;color:var(--muted);font-size:15px;flex-wrap:wrap}
+  .ltime{color:var(--muted);font-variant-numeric:tabular-nums}
+  .ltime:empty{display:none}
+  .dot{width:8px;height:8px;border-radius:50%;background:var(--accent);position:relative}
+  .dot::after{content:"";position:absolute;inset:-5px;border-radius:50%;
+              border:1px solid var(--accent);animation:pulse 2.4s ease-out infinite}
+  @keyframes pulse{0%{transform:scale(.6);opacity:.9}100%{transform:scale(2.1);opacity:0}}
+
+  .detail{display:flex;flex-direction:column;gap:26px;padding-top:14px}
+  .detail .grp .lbl{font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#ffffff;margin-bottom:8px}
+  .detail .grp .val{font-size:15px;color:var(--fg)}
+  .detail .grp .val.muted{color:var(--muted)}
+  .detail a{transition:color .25s;text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+  .now-text a{text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px;transition:color .25s}
+  .now-text a:hover{color:var(--accent)}
+  .navicon{width:15px;height:15px;fill:var(--accent);vertical-align:-2px;margin-left:5px;transform-origin:50% 75%}
+  .work-label .navicon{width:20px;height:20px;vertical-align:-5px;margin-left:8px}
+  .navicon.wiggle,.topnav a:hover .navicon{animation:flaskwiggle .6s ease}
+  @keyframes flaskwiggle{0%,100%{transform:rotate(0)}22%{transform:rotate(-15deg)}50%{transform:rotate(12deg)}74%{transform:rotate(-6deg)}88%{transform:rotate(3deg)}}
+  #lab{scroll-margin-top:100px}
+  #about{scroll-margin-top:70px}
+  .detail a:hover{color:var(--accent)}
+  .labhook{text-decoration:none}
+  .detail .sep{color:var(--muted);margin:0 7px}
+  .labhook{color:var(--accent)}
+  .arrow{color:var(--muted);font-size:.85em}
+
+  /* ---------- about lead (light band) ---------- */
+  .about-band{margin:0 calc(50% - 50vw);background:#f6f4f1;padding:64px 0}
+  .about-inner{max-width:var(--maxw);margin:0 auto;padding:0 clamp(20px,4vw,30px);display:grid;grid-template-columns:1.9fr .8fr;gap:clamp(24px,3vw,40px);align-items:start}
+  .about-band p{font-size:clamp(18px,2.1vw,23px);line-height:1.55;max-width:52ch;color:#454545;font-weight:400;margin:0}
+  .about-band p .hi{color:#141414;font-weight:500}
+  .about-more{display:inline-block;margin-top:20px;font-family:var(--head);font-weight:600;font-size:18px;
+              color:var(--accent-ink);transition:color .2s}
+  .about-more:hover{text-decoration:underline;text-underline-offset:3px}
+  .about-photo{display:block;width:100%;max-width:420px;height:auto;border-radius:0}
+
+  /* ---------- projects ---------- */
+  .work-label{font-size:15px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#ffffff;padding:64px 0 0}
+  .project{display:grid;grid-template-columns:0.8fr 1.4fr 1fr;gap:clamp(24px,4vw,56px);
+           align-items:start;padding:60px 0;scroll-margin-top:90px}
+  .project + .project{border-top:1px solid var(--line)}
+  .pbody{padding-top:2px}
+  .pnum{font-family:var(--head);font-weight:600;font-size:clamp(40px,4.6vw,60px);color:var(--dim);line-height:1}
+  .reveal-up{opacity:0;transform:translateY(22px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+  .reveal-up.in{opacity:1;transform:none}
+  .ptitle{font-family:var(--head);font-weight:600;font-size:clamp(30px,3.8vw,50px);
+          line-height:1.04;margin:0 0 6px;letter-spacing:-.01em}
+  .pmeta-sub{font-style:italic;color:var(--muted);font-size:14px;margin-bottom:20px}
+  .pmeta{color:var(--muted);font-size:16px;letter-spacing:.02em;margin-bottom:20px}
+  .pdesc{color:#ffffff;font-size:16px;max-width:46ch;margin-bottom:26px}
+  .metrics{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:30px}
+  .metric .mn{font-family:var(--head);font-weight:500;font-size:clamp(26px,3vw,38px);color:var(--accent);line-height:1}
+  .metric .ml{font-size:13px;color:var(--muted);margin-top:6px;max-width:16ch}
+  .pcol-left{min-width:0}
+  /* invisible wrappers by default (desktop/mobile flow unchanged); become grid items only at tablet */
+  .pbody-main,.proj-extra{display:contents}
+  .pstack{margin-top:22px}
+  .pstack-label{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.14em;color:#ffffff;margin-bottom:9px}
+  .pstack-tool{color:#c4c4c4;font-size:15px;line-height:1.55}
+  .pstack-link{display:inline-block;transition:color .2s}
+  .pstack-link:hover{color:var(--accent)}
+  .actions{display:flex;gap:14px;flex-wrap:wrap}
+  .btn{font-size:14px;padding:11px 18px;border:1px solid var(--line);border-radius:40px;
+       display:inline-flex;align-items:center;gap:8px;transition:all .25s}
+  .btn.primary{border-color:var(--accent);color:var(--fg)}
+  .btn.primary:hover{background:var(--accent);color:#0a0a0a}
+  .btn.ghost:hover{border-color:var(--muted);color:#fff}
+  /* white live indicator before the "Try it live" label: a solid core dot with a radiating ring */
+  .live-dot{flex:none;width:7px;height:7px;border-radius:50%;position:relative;background:#fff}
+  .live-dot::after{content:"";position:absolute;inset:0;border-radius:50%;background:#fff;
+                   animation:livepulse 2.4s ease-out infinite}
+  @keyframes livepulse{0%{transform:scale(1);opacity:.55}70%,100%{transform:scale(2.6);opacity:0}}
+
+  /* device frame */
+  .stage{display:flex;justify-content:center}
+  /* 300×624 graphite-titanium frame → screen 278×602 ≈ 2.166:1, matching an iPhone 15 / 14 (6.1", 19.5:9) */
+  .phone{width:300px;height:624px;border-radius:55px;padding:11px;position:relative;
+         background:linear-gradient(135deg,#6c6f75 0%,#3a3c41 15%,#202227 33%,#52555b 49%,
+                    #2a2c30 65%,#161719 82%,#5e6167 100%);
+         box-shadow:0 48px 100px rgba(0,0,0,.7),
+                    inset 0 1px 1px rgba(255,255,255,.32),
+                    inset 0 -1px 2px rgba(0,0,0,.6),
+                    inset 0 0 0 1px rgba(0,0,0,.5)}
+  /* side buttons — thin graphite nubs on the rails */
+  .ph-side{position:absolute;width:3px;z-index:0;
+           background:linear-gradient(180deg,#34363b,#5b5e64 45%,#26282c)}
+  .ph-mute {left:-2.5px;top:120px;height:24px;border-radius:3px 0 0 3px}
+  .ph-volup{left:-2.5px;top:162px;height:50px;border-radius:3px 0 0 3px}
+  .ph-voldn{left:-2.5px;top:224px;height:50px;border-radius:3px 0 0 3px}
+  .ph-power{right:-2.5px;top:182px;height:80px;border-radius:0 3px 3px 0}
+  .screen{width:100%;height:100%;border-radius:44px;overflow:hidden;position:relative;
+          background:#000;box-shadow:0 0 0 8px #050505,inset 0 0 0 1px rgba(0,0,0,.5)}
+  /* faux iOS status bar. Per project, tint it to the app's header colour via --app-top on .screen
+     (Focus Forest uses #558a6e); --sb-fg flips the glyph colour for light apps. Default blends dark. */
+  .statusbar{position:absolute;top:0;left:0;right:0;height:40px;z-index:3;
+             display:flex;align-items:center;justify-content:space-between;
+             padding:0 16px 0 20px;background:var(--app-top,transparent);color:var(--sb-fg,#fff);
+             font-family:var(--head);font-weight:600}
+  /* real iOS look: SF Pro on Apple devices, graceful fallback elsewhere — not the site's Urbanist */
+  .sb-time{font-family:-apple-system,"SF Pro Text","SF Pro Display",system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+           font-size:13px;font-weight:600;letter-spacing:.01em;padding-top:2px}
+  .sb-icons{display:flex;align-items:center;gap:4px}
+  .sb-ic{height:10px;width:auto;fill:currentColor}
+  /* three nested arcs = the real iPhone Wi-Fi glyph (stroked so the bands stay crisp) */
+  .sb-wifi{height:10.5px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round}
+  .sb-batt svg{height:11.5px;width:auto;display:block}
+  /* classic notch: flush to the top edge (no gap above it), with speaker slit + camera lens */
+  .notch{position:absolute;top:0;left:50%;transform:translateX(-50%);
+         width:118px;height:30px;background:#050505;border-radius:0 0 21px 21px;z-index:5;
+         display:flex;align-items:center;justify-content:center;gap:11px}
+  .n-speaker{width:40px;height:5px;border-radius:3px;background:#181a1e}
+  .n-cam{width:9px;height:9px;border-radius:50%;
+         background:radial-gradient(circle at 34% 32%,#46597a 0%,#1a2233 45%,#04060a 100%);
+         box-shadow:inset 0 0 1px rgba(120,150,200,.6)}
+  /* video fills everything below the status bar; its ratio matches that box so cover never clips the nav */
+  .ff-video{position:absolute;left:0;right:0;top:40px;bottom:0;width:100%;z-index:1;
+            object-fit:cover;background:#558a6e;display:block}
+  .scr-pad{padding:46px 18px 18px}
+  .scr-h{font-family:var(--head);font-weight:600;font-size:16px;margin-bottom:3px}
+  .scr-sub{font-size:12px;color:var(--muted);margin-bottom:18px}
+  .chip{display:inline-block;font-size:12px;color:var(--accent);border:1px solid rgba(248,112,96,.5);
+        border-radius:30px;padding:4px 9px;margin-bottom:14px}
+  .line{height:8px;border-radius:6px;background:#262626;margin-bottom:9px}
+  .line.s{width:62%}.line.m{width:84%}.line.l{width:100%}
+  .line.hot{background:rgba(248,112,96,.85);width:48%}
+  .bubble{font-size:12px;line-height:1.45;padding:9px 11px;border-radius:13px;margin-bottom:8px;max-width:82%}
+  .bubble.you{background:#222;margin-left:auto;border-bottom-right-radius:4px}
+  .bubble.ai{background:rgba(248,112,96,.16);border:1px solid rgba(248,112,96,.3);border-bottom-left-radius:4px}
+  .bars{display:flex;align-items:flex-end;gap:7px;height:78px;margin:16px 0}
+  .bars span{flex:1;background:#262626;border-radius:4px}
+  .bars span.a{background:var(--accent)}
+  .score{font-family:var(--head);font-weight:600;font-size:40px}
+  .score b{color:var(--accent);font-weight:600}
+
+  /* ---------- lab (full-bleed light band) ---------- */
+  .lab-band{margin:0 calc(50% - 50vw);background:#f6f4f1;padding:60px 0 76px}
+  .lab-inner{max-width:var(--maxw);margin:0 auto;padding:0 clamp(20px,4vw,30px)}
+  .lab-band .work-label{color:#141414;padding:0}
+  /* exception to the muted-on-cream rule: icons keep the bright --accent (the flask inherits it) */
+  .lab-intro{color:#5b5b5b;font-size:16px;margin:14px 0 22px;line-height:1.55}
+  .lab-rule{border:0;height:1px;background:rgba(20,20,20,.12);margin:0 0 26px}
+  .lab-rule.foot{margin:56px 0 34px}
+  .lab-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+  .lab-proof{margin-top:30px;max-width:62ch;font-size:14px;line-height:1.55;color:#5b5b5b}
+  .lab-card{display:flex;flex-direction:column;gap:10px;background:#ffffff;border-radius:16px;
+            border:1px solid rgba(179,81,69,.25);border-color:color-mix(in srgb,var(--accent-ink) 25%,transparent);
+            padding:22px 22px 20px;transition:border-color .25s,transform .25s,box-shadow .25s}
+  .lab-card:hover{border-color:var(--accent-ink);transform:translateY(-3px);box-shadow:0 16px 34px rgba(0,0,0,.10)}
+  .lab-top{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+  .lab-name{font-family:var(--head);font-weight:600;font-size:19px;color:#141414;letter-spacing:-.01em}
+  .lab-arrow{color:#b9b5ac;font-size:14px;transition:color .25s}
+  .lab-card:hover .lab-arrow{color:var(--accent-ink)}
+  .lab-desc{color:#5a5a5a;font-size:14px;line-height:1.5}
+  .lab-learn{color:#7a7a7a;font-size:13px;line-height:1.5}
+  .lab-learn b{color:#1f1f1f;font-weight:600}
+  .lab-foot{margin-top:auto;padding-top:6px}
+  .lab-tag{display:inline-flex;align-items:center;gap:7px;font-size:12px;color:#5a5a5a;letter-spacing:.04em}
+  .lab-tag .tdot{width:5px;height:5px;border-radius:50%;background:var(--accent)} /* exception: dots stay bright coral */
+  /* footer row: a prominent solid CTA + a quiet code link */
+  .lab-links{display:flex;align-items:center;gap:16px;padding-top:14px;border-top:1px solid #e7e4dd}
+  .lab-link{font-size:13px;transition:color .2s}
+  /* "Try it live" — coral-outlined button on the light card; uses --accent-ink throughout
+     (no bright --accent on the cream page); fills on hover with white text for contrast */
+  .lab-link.live{display:inline-flex;align-items:center;gap:6px;background:transparent;
+                 border:1.5px solid var(--accent-ink);color:var(--accent-ink);
+                 font-weight:600;padding:9px 18px;border-radius:40px;transition:background .2s,color .2s,border-color .2s,transform .2s}
+  .lab-link.live:hover{background:var(--accent-ink);border-color:var(--accent-ink);color:#fff;transform:translateY(-1px)}
+  .lab-link.code{color:#5a5a5a} /* muted secondary text link */
+  .lab-link.code:hover{color:#1f1f1f;text-decoration:underline;text-underline-offset:3px}
+
+  /* ---- experiment shown as a full project card (Focus Forest layout), recoloured for the cream band ---- */
+  .lab-band .project{padding:8px 0 0;scroll-margin-top:90px}
+  .lab-band .pnum{color:#cfc8bd}
+  .lab-band .ptitle{color:#141414}
+  .lab-band .pmeta{color:#8a8a8a}
+  .lab-band .pdesc{color:#454545}
+  .lab-band .pdesc b{color:#141414}
+  .lab-band .pstack-label{color:#141414}
+  .lab-band .pstack-tool{color:#5a5a5a}
+  .lab-band .pstack-link:hover{color:var(--accent-ink)}
+  .lab-band .metric .mn{color:var(--accent-ink)}
+  .lab-band .metric .ml{color:#8a8a8a}
+  .lab-band .btn.primary{border-color:var(--accent-ink);color:#141414}
+  .lab-band .btn.primary:hover{background:var(--accent-ink);color:#fff}
+  .lab-band .live-dot,.lab-band .live-dot::after{background:var(--accent-ink)}
+  /* placeholder screen where the J Train demo video will go (swap for <video> later) */
+  .stage-ph{position:absolute;inset:0;z-index:1;display:flex;flex-direction:column;align-items:center;justify-content:center;
+            text-align:center;gap:4px;font-family:var(--head);font-weight:600;font-size:16px;color:rgba(255,255,255,.88);
+            background:repeating-linear-gradient(45deg,#4c4c4c,#4c4c4c 11px,#434343 11px,#434343 22px)}
+  .stage-ph small{font-weight:400;font-size:12px;opacity:.8}
+  /* light placeholder inside the clean browser window (the dark striped one stays for the phone) */
+  .mon-screen .stage-ph{color:#9aa0a8;
+            background:repeating-linear-gradient(45deg,#f0f0f2,#f0f0f2 11px,#eaeaee 11px,#eaeaee 22px)}
+  /* ---------- Browser window (clean, frameless — for desktop experiments like J-train) ---------- */
+  /* A minimal macOS-style browser window: rounded corners, soft shadow, slim toolbar. The phone keeps
+     the realistic device look; the desktop stays content-first and short, matching modern portfolios. */
+  .monitor{width:100%}
+  .mon-device{width:100%;border-radius:13px;position:relative;overflow:hidden;background:#fff;
+           border:1px solid rgba(255,255,255,.09);
+           box-shadow:0 26px 60px -22px rgba(0,0,0,.65),0 10px 24px -14px rgba(0,0,0,.5)}
+  .mon-inner{position:relative;background:#fff}
+  .mon-bar{height:40px;display:flex;align-items:center;gap:11px;padding:0 15px;
+           background:#f3f3f5;border-bottom:1px solid rgba(0,0,0,.08)}
+  .mon-dots{display:flex;gap:8px;flex:none}
+  .mon-dots i{width:12px;height:12px;border-radius:50%;display:block;box-shadow:inset 0 0 0 .5px rgba(0,0,0,.14)}
+  .mon-dots i:nth-child(1){background:radial-gradient(circle at 32% 28%,#ff8a80,#ff5f57)}
+  .mon-dots i:nth-child(2){background:radial-gradient(circle at 32% 28%,#ffd266,#febc2e)}
+  .mon-dots i:nth-child(3){background:radial-gradient(circle at 32% 28%,#5fe07a,#28c840)}
+  /* back / forward chevrons (forward dimmed, no history) */
+  .mon-arrows{display:flex;align-items:center;gap:10px;flex:none;color:#9a9fa6}
+  .mon-arrows svg{width:12px;height:12px;display:block}
+  .mon-arrows svg:last-child{opacity:.4}
+  .mon-url{flex:1;height:24px;border-radius:7px;background:#e8e8ec;box-shadow:inset 0 0 0 1px rgba(0,0,0,.04);
+           display:flex;align-items:center;justify-content:center;gap:6px;padding:0 12px;
+           font-family:var(--head);font-weight:500;font-size:11.5px;color:#6c7178;letter-spacing:.02em;
+           white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .mon-lock{width:9px;height:9px;flex:none;color:#8a8f97}
+  .mon-screen{position:relative;aspect-ratio:2/1;background:#f4f4f6;overflow:hidden}
+  .mon-screen video,.mon-screen img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+  /* J-train: phone on the right (like Focus Forest) — it's a 380px phone-width experience.
+     No .pnum in the left column, so the .pstack's 22px top margin drops "AI Build (2026)"
+     below the title/phone. Nudge the title + phone down to line up with that label. */
+  @media (min-width:861px){ #j-train .pbody{margin-top:16px} #j-train .stage{margin-top:22px} }
+  /* Ada: phone (mobile recording) stays in the right column; the desktop browser window (J-train style)
+     spans full width on the row below, under the description. */
+  #ada .stage-desktop{grid-column:1 / -1;justify-content:flex-start;margin-top:34px}
+  #ada .stage-desktop .monitor{max-width:none}
+
+
+  /* ---------- footer ---------- */
+  footer{padding:70px 0 50px;display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:24px}
+  footer .copy{color:var(--dim);font-size:14px}
+  footer .built{color:var(--dim);font-size:12px;margin-top:8px}
+  footer .built b{color:var(--muted);font-weight:400}
+  footer .flinks{display:flex;gap:26px;font-size:15px}
+  footer .flinks a{transition:color .25s;text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+  footer .flinks a:hover{color:var(--accent)}
+
+  /* ---------- load animation ---------- */
+  .reveal{opacity:0;transform:translateY(22px);animation:up .8s cubic-bezier(.2,.7,.2,1) forwards}
+  @keyframes up{to{opacity:1;transform:none}}
+  @keyframes pagein{from{opacity:0}to{opacity:1}}
+
+  @media (max-width:860px){
+    html{overflow-x:hidden}
+    #j-train .pbody{grid-column:auto}
+    /* project meta stacks sit in a wrapping row (not stacked) to cut mobile scroll height */
+    .pcol-left{display:block}
+    .pcol-left .pnum{margin-bottom:14px}
+    .stack-group{display:flex;flex-wrap:wrap;gap:18px 30px;align-items:flex-start;
+                 background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);
+                 border-radius:14px;padding:18px 20px}
+    .stack-group .pstack{margin-top:0}
+    .lab-band .stack-group{background:rgba(20,20,20,.04);border-color:rgba(20,20,20,.12)}
+    .hero{grid-template-columns:1fr;gap:40px;padding-top:70px}
+    .detail{flex-direction:row;flex-wrap:wrap;gap:30px 44px}
+    .project{grid-template-columns:1fr;gap:28px}
+    .pdesc{max-width:none}  /* full-width description on tablet/mobile, matching J-train */
+    .lab-grid{grid-template-columns:1fr}
+    .pnum{font-size:38px}
+    .pbody{margin-bottom:18px}
+    .phone{width:min(300px,82vw);height:auto;aspect-ratio:300/624}
+    .stage{justify-content:flex-start}
+    .nav-toggle{display:flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;
+                width:42px;height:42px;border:0;background:none;cursor:pointer;padding:0}
+    .nav-toggle span{display:block;width:22px;height:2px;background:#fff;border-radius:2px;
+                     transition:transform .25s ease,opacity .2s ease}
+    .nav-toggle[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+    .nav-toggle[aria-expanded="true"] span:nth-child(2){opacity:0}
+    .nav-toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+    .topnav{position:absolute;top:100%;left:0;right:0;display:none;flex-direction:column;gap:0;
+            background:var(--bg);border-bottom:1px solid rgba(255,255,255,.28);
+            padding:2px 0 14px;box-shadow:0 26px 46px rgba(0,0,0,.75)}
+    .topnav.open{display:flex}
+    .topnav a{padding:13px 2px;font-size:16px;border-top:1px solid rgba(255,255,255,.18)}
+    .topnav a:first-child{border-top:0}
+    .about-band p{max-width:none}
+    .about-inner{grid-template-columns:1fr}
+  }
+  /* tablet: Focus Forest & Ada place stats/CTAs to the right of the phone, text stays full-width */
+  @media (min-width:561px) and (max-width:860px){
+    #focus-forest, #ada{grid-template-columns:minmax(0,300px) 1fr;
+      column-gap:clamp(20px,4vw,32px);row-gap:28px;align-items:start}
+    #focus-forest{grid-template-areas:"stacks stacks" "main main" "phone extra"}
+    #ada{grid-template-areas:"stacks stacks" "main main" "phone extra" "desktop desktop"}
+    #focus-forest .pbody, #ada .pbody{display:contents}
+    #focus-forest .pbody-main, #ada .pbody-main{grid-area:main;display:block}
+    #focus-forest .proj-extra, #ada .proj-extra{grid-area:extra;display:block;align-self:center}
+    #focus-forest .pcol-left, #ada .pcol-left{grid-area:stacks}
+    #focus-forest .stage, #ada .stage{grid-area:phone}
+    #ada .stage-desktop{grid-area:desktop;margin-top:6px}
+  }
+  /* phones: stack the hero meta one-per-row instead of the cramped two-up */
+  @media (max-width:560px){
+    .detail{flex-direction:column;gap:22px}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .reveal,.hl .rotate{animation:none!important;transition:none!important;opacity:1!important;transform:none!important;filter:none!important}
+    .dot::after{animation:none}
+    .live-dot::after{animation:none;display:none}
+    .navicon{animation:none!important}
+    .wrap{animation:none}
+  }
+  /* ---------- back to top ---------- */
+  .totop{position:fixed;right:clamp(18px,3vw,34px);bottom:clamp(18px,3vw,34px);width:46px;height:46px;border-radius:50%;
+         border:1px solid var(--accent);background:rgba(248,112,96,.12);color:var(--accent);font-size:20px;line-height:1;
+         display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:50;
+         opacity:0;visibility:hidden;transform:translateY(8px);
+         transition:opacity .3s ease,transform .3s ease,background .2s ease,color .2s ease}
+  .totop.show{opacity:1;visibility:visible;transform:translateY(0)}
+  .totop:hover{background:var(--accent);color:#000}
+
+  /* ============================================================
+     CASE STUDY PAGES (work/*.html) — shared, reusable classes
+     ============================================================ */
+  .cs-back{display:inline-flex;align-items:center;gap:8px;font-family:var(--head);
+           font-weight:500;font-size:14px;color:var(--muted);text-decoration:none;
+           padding:24px 0 0;transition:color .2s ease}
+  .cs-back:hover{color:var(--accent)}
+  .cs-hero{padding:48px 0 40px;border-bottom:1px solid var(--line)}
+  .cs-meta{font-family:var(--head);font-weight:500;font-size:14px;letter-spacing:.04em;
+           text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+  .cs-title{font-family:var(--head);font-weight:600;line-height:1.04;letter-spacing:-.02em;
+            font-size:clamp(36px,6vw,68px);margin-bottom:18px}
+  .cs-lede{font-family:var(--body);font-size:clamp(17px,2.2vw,21px);line-height:1.5;
+           color:var(--muted);max-width:60ch}
+  .cs-facts{display:flex;flex-wrap:wrap;gap:32px;margin-top:28px}
+  .cs-fact .k{font-family:var(--head);font-size:12px;letter-spacing:.14em;
+              text-transform:uppercase;color:var(--dim);margin-bottom:4px}
+  .cs-fact .v{font-family:var(--head);font-weight:500;font-size:16px;color:var(--fg)}
+  .cs-section{padding:44px 0;border-bottom:1px solid var(--line)}
+  .cs-section:last-of-type{border-bottom:none}
+  .cs-h{font-family:var(--head);font-weight:600;font-size:clamp(22px,3vw,30px);
+        margin-bottom:16px;letter-spacing:-.01em}
+  .cs-section p{font-size:17px;line-height:1.65;color:var(--muted);max-width:68ch;
+                margin-bottom:14px}
+  .cs-section p:last-child{margin-bottom:0}
+  .cs-figure{margin:24px 0;border:1px solid var(--line);border-radius:14px;overflow:hidden;
+             background:#0c0c0c}
+  .cs-figure img{display:block;width:100%;height:auto}
+  .cs-figure figcaption{font-size:13px;color:var(--dim);padding:12px 16px}
+  .cs-cols{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+  @media(max-width:760px){.cs-cols{grid-template-columns:1fr}}
+  .cs-cta{display:flex;flex-wrap:wrap;gap:14px;padding:40px 0 8px}

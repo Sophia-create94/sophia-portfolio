@@ -1,0 +1,26 @@
+# macOS
+.DS_Store
+
+# Editors
+.vscode/
+.idea/
+
+# Vercel
+.vercel
+
+# Node (only if you ever add tooling)
+node_modules/
+npm-debug.log*
+
+# Logs / env
+*.log
+.env
+.env.local
+
+# Pristine source media kept locally for re-editing (not deployed)
+assets/*.source.*
+
+# Internal AI-build notes & local agent tooling (kept local, not published)
+CLAUDE.md
+AGENTS.md
+.claude/

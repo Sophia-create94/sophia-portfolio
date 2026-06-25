@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<title>Sophia Müller | About</title>
+<meta name="description" content="About Sophia Müller — an architect turned product designer who integrates AI across the full UX process. How I work, and where I stand on AI.">
+<link rel="canonical" href="https://sophia-ux.com/about">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://sophia-ux.com/about">
+<meta property="og:title" content="About — Sophia Müller">
+<meta property="og:description" content="An architect turned product designer who integrates AI across the full UX process. How I work, and where I stand on AI.">
+<meta property="og:image" content="https://sophia-ux.com/assets/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Sophia Müller — Product Designer portfolio">
+<meta property="og:site_name" content="Sophia Müller">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="About — Sophia Müller">
+<meta name="twitter:description" content="An architect turned product designer who integrates AI across the full UX process. How I work, and where I stand on AI.">
+<meta name="twitter:image" content="https://sophia-ux.com/assets/og-image.jpg">
+<meta name="twitter:image:alt" content="Sophia Müller — Product Designer portfolio">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  /* ============================================================
+     THEME: cream-paper variant of the Sophia Müller brand.
+     Tokens match the Focus Forest case study so this page
+     drops into the same site. Edit copy in the <body> below.
+     ============================================================ */
+  :root{
+    --paper:#f6f4f1; --paper-2:#f1eee8; --card:#ffffff;
+    --ink:#141414; --body:#454545; --muted:#666666; --faint:#b0a99e;
+    --line:#e2ded6; --accent:#F87060; --accent-ink:#b35145;
+    --head:'Urbanist',sans-serif; --sans:'Open Sans',sans-serif;
+    --maxw:1240px; --header-h:64px;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--body);font-family:var(--sans);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+
+  /* ---------- Header ---------- */
+  .header{position:sticky;top:0;z-index:50;max-width:var(--maxw);margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:30px clamp(20px,4vw,30px) 18px;background:rgba(246,244,241,.86);backdrop-filter:blur(8px)}
+  .header::after{content:"";position:absolute;left:clamp(20px,4vw,30px);right:clamp(20px,4vw,30px);bottom:0;height:1px;background:rgba(20,20,20,.2)}
+  .brand{font-family:var(--head);font-weight:600;font-size:18px;letter-spacing:.2px;color:var(--ink)}
+  .brand b{color:var(--accent-ink);font-weight:700}
+  .nav{display:flex;gap:26px;align-items:center;font-size:14px}
+  .nav a{color:var(--body);transition:color .15s}
+  .nav a:hover{color:var(--accent-ink)}
+  .nav a.active{color:var(--accent-ink);font-weight:600}
+  .nav-toggle{display:none}
+  /* Experiments flask icon: dark coral to match the heading; wiggles on load, every few seconds, and on hover */
+  .navicon{width:15px;height:15px;fill:var(--accent-ink);vertical-align:-2px;margin-left:4px;transform-origin:50% 75%}
+  .navicon.wiggle,.nav a:hover .navicon{animation:flaskwiggle .6s ease}
+  @keyframes flaskwiggle{0%,100%{transform:rotate(0)}22%{transform:rotate(-15deg)}50%{transform:rotate(12deg)}74%{transform:rotate(-6deg)}88%{transform:rotate(3deg)}}
+
+  /* ---------- Layout ---------- */
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(20px,4vw,30px)}
+
+  /* ---------- Hero ---------- */
+  .hero{display:grid;grid-template-columns:minmax(0,34rem) minmax(0,460px);justify-content:space-between;gap:90px;align-items:start;padding:clamp(40px,7vw,80px) 0 clamp(26px,4vw,38px)}
+  .hero-text{min-width:0}
+  /* align the photo top with the header text (the h1 carries a 12px top margin) */
+  .hero .photo{margin-top:12px}
+  .eyebrow{font-family:var(--head);font-weight:600;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  h1{font-family:var(--head);font-weight:600;font-size:clamp(34px,5vw,50px);letter-spacing:-.02em;line-height:1.05;color:var(--ink);margin:12px 0 0}
+  .lede{font-size:clamp(16px,1.6vw,19px);line-height:1.55;max-width:46ch;color:var(--body);margin:18px 0 0}
+  .intro-p{font-size:18px;line-height:1.65;max-width:62ch;color:var(--body);margin:16px 0 0}
+
+  /* PHOTO: replace the <div class="photo"> placeholder in the
+     body with your image, e.g.:
+       <img class="photo" src="sophia.jpg" alt="Sophia Müller">
+     The .photo styles below size and crop either one. */
+  .photo{width:100%;height:auto;aspect-ratio:4/5;border-radius:0;object-fit:cover;display:block}
+  .photo.placeholder{background:var(--paper-2);border:1px solid var(--line);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;color:var(--faint);font-family:var(--head);font-weight:500;font-size:13px}
+  .photo.placeholder small{font-family:var(--sans);font-weight:400;font-size:12px;color:var(--faint)}
+
+  /* ---------- Sections ---------- */
+  .block{padding:clamp(26px,4vw,38px) 0;border-top:1px solid var(--line)}
+  .kicker{font-family:var(--head);font-weight:600;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0 0 12px}
+  .block-ic{width:40px;height:40px;border-radius:11px;background:rgba(248,112,96,.12);color:var(--accent);display:flex;align-items:center;justify-content:center;flex:none}
+  .block-head{display:flex;align-items:center;gap:12px;margin:0 0 12px}
+  .block-head .kicker{margin:0}
+  h2{font-family:var(--head);font-weight:600;font-size:clamp(23px,3vw,32px);letter-spacing:-.015em;line-height:1.12;color:var(--ink);margin:0}
+  .block p{max-width:64ch;margin:14px 0 0;font-size:18px}
+
+  /* AI stance card */
+  .pov{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 22px;margin:20px 0 0}
+  .pov .label{font-family:var(--head);font-weight:600;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-ink);margin:0 0 9px}
+  .pov p{margin:0;font-size:17px;max-width:none}
+  /* How I work: paragraphs on the left, the AI-stance box on the right */
+  .how-cols{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:start;margin-top:8px}
+  .how-cols .how-text p:first-child{margin-top:0}
+  .how-cols .pov{margin:0}
+
+  /* Experience */
+  .exp{display:flex;flex-wrap:wrap;gap:24px;align-items:baseline;margin-top:4px}
+  .exp .job{font-family:var(--head);font-weight:600;color:var(--ink);font-size:16px;margin:0 0 8px}
+  .exp .job span{color:var(--muted);font-weight:400;font-size:13px;font-family:var(--sans)}
+
+  /* Pills */
+  .pills{display:flex;gap:8px;flex-wrap:wrap}
+  .pill{font-family:var(--head);font-weight:500;font-size:13px;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:20px;padding:6px 14px}
+  .pill .ar{color:var(--muted)}
+  .pill-label{font-size:13px;color:var(--muted);margin:0 0 9px}
+
+  /* Two-up */
+  .two-up{display:flex;flex-wrap:wrap;gap:22px}
+  .two-up > div{flex:1 1 300px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px 26px 28px}
+  .two-up p{max-width:46ch;margin-top:0;font-size:16px}
+
+  /* Connect */
+  .connect h2 .wave{color:var(--accent)}
+  .connect .links{font-family:var(--head);font-weight:500;font-size:15px;color:var(--accent-ink);margin-top:14px}
+  .connect .links a:hover{text-decoration:underline}
+
+  /* Footer */
+  /* footer: same layout as the homepage, in cream */
+  .foot{border-top:1px solid var(--line);margin-top:0;padding:50px 0;display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between;align-items:flex-end}
+  .foot .copy{color:var(--muted);font-size:14px}
+  .foot .flinks{display:flex;gap:26px;font-size:15px}
+  .foot .flinks a{color:var(--body);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px;transition:color .2s}
+  .foot .flinks a:hover{color:var(--accent-ink)}
+
+  /* back-to-top button (same behavior as the homepage), cream colors */
+  .totop{position:fixed;right:clamp(18px,3vw,34px);bottom:clamp(18px,3vw,34px);width:46px;height:46px;border-radius:50%;border:1px solid var(--accent-ink);background:rgba(179,81,69,.1);color:var(--accent-ink);font-size:20px;line-height:1;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:60;opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .3s ease,transform .3s ease,background .2s ease,color .2s ease}
+  .totop.show{opacity:1;visibility:visible;transform:translateY(0)}
+  .totop:hover{background:var(--accent-ink);color:#fff}
+
+  /* ---------- Gentle on-load reveal ---------- */
+  .reveal{opacity:0;transform:translateY(16px);animation:rise .7s cubic-bezier(.2,.7,.2,1) forwards}
+  @keyframes rise{to{opacity:1;transform:none}}
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:860px){
+    .hero{grid-template-columns:1fr;gap:28px} /* photo↔divider handled in the base .hero padding */
+    .photo{max-width:320px}
+    .intro-p{max-width:none}                       /* full-width text on tablet/mobile */
+    .how-cols{grid-template-columns:1fr;gap:28px}  /* text↔box = text↔image */
+    .how-text p{max-width:none}                    /* full-width text on tablet/mobile */
+    .two-up{gap:28px}                              /* looking-for ↔ off-the-clock = text↔image */
+    .foot{margin-top:0}                            /* "places…" ↔ footer divider ≈ 26px */
+  }
+  /* match the homepage: collapse the nav to just the brand on mobile/tablet */
+  @media (max-width:860px){
+    .nav-toggle{display:flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;
+                width:42px;height:42px;border:0;background:none;cursor:pointer;padding:0}
+    .nav-toggle span{display:block;width:22px;height:2px;background:var(--ink);border-radius:2px;
+                     transition:transform .25s ease,opacity .2s ease}
+    .nav-toggle[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+    .nav-toggle[aria-expanded="true"] span:nth-child(2){opacity:0}
+    .nav-toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+    .nav{position:absolute;top:100%;left:0;right:0;display:none;flex-direction:column;gap:0;
+         align-items:stretch;text-align:left;
+         background:var(--paper);border-bottom:1px solid var(--line);
+         padding:2px clamp(20px,4vw,30px) 14px;box-shadow:0 18px 30px rgba(20,20,20,.12)}
+    .nav.open{display:flex}
+    .nav a{padding:13px 2px;font-size:16px;border-top:1px solid var(--line)}
+    .nav a:first-child{border-top:0}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .reveal{animation:none;opacity:1;transform:none}
+    .header{backdrop-filter:none}
+    .navicon{animation:none!important}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     EDITING GUIDE
+     - All copy lives between the tags below; edit the text freely.
+     - Replace href="#" links with your real URLs (CV, LinkedIn,
+       Email = mailto:you@example.com, Dribbble).
+     - Swap the photo placeholder for <img class="photo" src="...">.
+     - No build step: just open this file in a browser to preview.
+     ============================================================ -->
+
+<header class="header">
+  <a class="brand" href="index.html">Sophia <b>Müller</b></a>
+  <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="sitenav">
+    <span></span><span></span><span></span>
+  </button>
+  <nav class="nav" id="sitenav">
+    <a href="index.html#work">Work</a>
+    <a href="index.html#lab">Experiments <svg class="navicon" viewBox="0 -960 960 960" aria-hidden="true"><path d="M200-120q-51 0-72.5-45.5T138-250l222-270v-240h-40q-17 0-28.5-11.5T280-800q0-17 11.5-28.5T320-840h320q17 0 28.5 11.5T680-800q0 17-11.5 28.5T640-760h-40v240l222 270q32 39 10.5 84.5T760-120H200Zm80-120h400L544-400H416L280-240Zm-80 40h560L520-492v-268h-80v268L200-200Zm280-280Z"/></svg></a>
+    <a href="about.html" class="active">About</a>
+    <a href="https://drive.google.com/file/d/1U345o1TKk5vKkupqxim-1aI5IbnpVFIE/view?usp=sharing" class="cv" target="_blank" rel="noopener">CV</a>
+  </nav>
+</header>
+
+<main class="wrap">
+
+  <!-- ===== Hero: intro ===== -->
+  <section class="hero">
+    <div class="reveal hero-text">
+      <h1>An architect's eye, <span style="color:var(--accent-ink)">now designing and building products with AI</span></h1>
+      <h2 style="margin-top:20px">Who am I, and how did I get here?</h2>
+      <p class="intro-p">I've always been passionate about design and aesthetics, but also about crafting things that are truly useful. What fascinates me is how design and function play together, which is what led me to study architecture, where they meet the way people live.</p>
+      <p class="intro-p">After my studies, I realized I wanted to shape more creative and meaningful digital experiences, the kind people use every day. That's how I got into product design.</p>
+      <p class="intro-p">With AI evolving so fast, I'm fascinated by experimenting with new tools, seeing how they fit into my workflow, and learning more every day. I'm endlessly excited about what's possible.</p>
+    </div>
+    <img class="photo reveal" src="assets/sophia-portrait-about.jpg?v=7" alt="Sophia Müller, product designer, smiling outdoors by a tree-lined canal" width="1000" height="1250">
+  </section>
+
+  <!-- ===== How I work + AI stance ===== -->
+  <section class="block reveal" style="animation-delay:.05s">
+    <h2>How I work</h2>
+    <div class="how-cols">
+      <div class="how-text">
+        <p>I've spent the last 4+ years in product design, working asynchronously. That shaped how I work: I decide independently, communicate clearly in writing, keep things moving without waiting on a meeting, and own projects end to end.</p>
+        <p>I think in structure and notice the little details. The core of my work is the full UX process: research, design, user testing, and the decisions in between. In my personal projects, I take it further and build with AI, treating it as the fast part of the process while I direct the tools and keep my judgment as the verification layer.</p>
+      </div>
+      <div class="pov">
+        <div class="label">Where I stand on AI</div>
+        <p>AI hasn't replaced my design judgment. Instead, it speeds up everything around it: inspiration, ideas, and getting from concept to a working, interactive product fast. The sharper part is still on me: knowing what to build, prompting clearly, catching where the tools get it wrong, and directing the fix.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== What I'm looking for + Off the clock ===== -->
+  <section class="block">
+    <div class="two-up">
+      <div>
+        <div class="block-head">
+          <div class="block-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4.6"/><circle cx="12" cy="12" r=".6" fill="currentColor"/></svg></div>
+          <div class="kicker">What I'm looking for</div>
+        </div>
+        <p>A product team that's excited to design together with AI, ideally on products that use AI at their core and genuinely shape people's lives.</p>
+      </div>
+      <div>
+        <div class="block-head">
+          <div class="block-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 9h11v4a5 5 0 0 1-5 5H10a5 5 0 0 1-5-5V9z"/><path d="M16 10h2.2a2.3 2.3 0 0 1 0 4.6H16"/><path d="M8 3.4c-.6.8-.6 1.6 0 2.4M12 3.4c-.6.8-.6 1.6 0 2.4"/></svg></div>
+          <div class="kicker">Off the clock</div>
+        </div>
+        <p>Vegan cooking, learning Spanish, traveling to new places, and exploring great coffee places along the way.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer class="foot">
+    <div class="copy">© 2026 Sophia Müller</div>
+    <div class="flinks">
+      <a href="https://www.linkedin.com/in/sophiadesign/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="mailto:hello@sophia-ux.com">Email</a>
+      <a href="https://drive.google.com/file/d/1U345o1TKk5vKkupqxim-1aI5IbnpVFIE/view?usp=sharing" target="_blank" rel="noopener">CV</a>
+    </div>
+  </footer>
+
+</main>
+
+<button class="totop" aria-label="Back to top">↑</button>
+
+<script>
+  /* Experiments flask icon: a catchy wiggle once shortly after load, then every few seconds
+     (also wiggles on hover via CSS). Mirrors the homepage. Skipped for reduced-motion visitors. */
+  (function(){
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    var icons = document.querySelectorAll('.navicon');
+    if (!icons.length) return;
+    function wiggle(){
+      icons.forEach(function(ni){
+        ni.classList.add('wiggle');
+        setTimeout(function(){ ni.classList.remove('wiggle'); }, 700);
+      });
+    }
+    setTimeout(wiggle, 600);
+    setInterval(wiggle, 6000);
+  })();
+
+  /* Back-to-top: appears after scrolling down ~one screen, smooth-scrolls up on click (mirrors the homepage). */
+  (function(){
+    var btn = document.querySelector('.totop');
+    if(!btn) return;
+    function onScroll(){
+      if(window.scrollY > window.innerHeight * 0.7){ btn.classList.add('show'); }
+      else { btn.classList.remove('show'); }
+    }
+    window.addEventListener('scroll', onScroll, {passive:true});
+    window.addEventListener('resize', onScroll);
+    onScroll();
+    btn.addEventListener('click', function(){ window.scrollTo({ top: 0, behavior: 'smooth' }); });
+  })();
+
+  /* Nav slides up and away on scroll (stays opaque), same as the homepage. Respects reduced motion. */
+  (function(){
+    if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    var bar = document.querySelector('.header');
+    if(!bar) return;
+    var target = window.scrollY, cur = target;
+    function apply(y){
+      var s = 40, e = 190;
+      var p = y <= s ? 0 : y >= e ? 1 : (y - s) / (e - s);
+      bar.style.transform = 'translateY(' + (-p * 101) + '%)';
+      bar.style.pointerEvents = p > 0.95 ? 'none' : '';
+    }
+    function loop(){
+      cur += (target - cur) * 0.14;
+      if(Math.abs(target - cur) < 0.15) cur = target;
+      apply(cur);
+      requestAnimationFrame(loop);
+    }
+    window.addEventListener('scroll', function(){ target = window.scrollY; }, {passive:true});
+    cur = target = window.scrollY;
+    loop();
+  })();
+
+  // Mobile hamburger: toggle the nav dropdown.
+  (function(){
+    var btn = document.querySelector('.nav-toggle');
+    var nav = document.getElementById('sitenav');
+    if(!btn || !nav) return;
+    function setOpen(open){
+      nav.classList.toggle('open', open);
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    }
+    btn.addEventListener('click', function(){ setOpen(!nav.classList.contains('open')); });
+    nav.addEventListener('click', function(e){ if(e.target.closest('a')) setOpen(false); });
+    document.addEventListener('keydown', function(e){ if(e.key === 'Escape') setOpen(false); });
+    document.addEventListener('click', function(e){ if(nav.classList.contains('open') && !nav.contains(e.target) && !btn.contains(e.target)) setOpen(false); });
+  })();
+</script>
+
+</body>
+</html>
