@@ -44,7 +44,7 @@
   // label both follow it. Only set LOCATION.country to override a zone that's not in the map below.
   (function(){
     var LOCATION = {
-      timezone: 'Europe/Rome', // ← change this as you travel, e.g. 'America/New_York', 'Asia/Bangkok'
+      timezone: 'Europe/Paris', // ← change this as you travel, e.g. 'America/New_York', 'Asia/Bangkok'
       country: ''              // optional override; '' = auto-derive the country from the timezone
     };
     // IANA timezone → country label. Add a line here if you land somewhere new.
