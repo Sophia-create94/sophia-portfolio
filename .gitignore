@@ -19,6 +19,7 @@ npm-debug.log*
 
 # Pristine source media kept locally for re-editing (not deployed)
 assets/*.source.*
+assets/*-source*
 
 # Internal AI-build notes & local agent tooling (kept local, not published)
 CLAUDE.md

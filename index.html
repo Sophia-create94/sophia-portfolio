@@ -53,7 +53,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=55">
+<link rel="stylesheet" href="styles.css?v=69">
 </head>
 <body>
 <div class="wrap">
@@ -124,87 +124,48 @@
   <!-- projects -->
   <div class="work-label" id="work">Selected work</div>
 
-  <!-- 01 -->
-  <section class="project" id="focus-forest">
+  <section class="project" id="job-radar">
     <div class="pcol-left">
       <div class="pnum">01</div>
       <div class="stack-group">
       <div class="pstack">
-        <div class="pstack-label">Design (2022)</div>
-        <div class="pstack-tool">Figma</div>
-      </div>
-      <div class="pstack">
         <div class="pstack-label">AI Build (2026)</div>
-        <div class="pstack-tool">Claude Design</div>
         <div class="pstack-tool">Claude Code</div>
-        <div class="pstack-tool">Cursor</div>
+        <div class="pstack-tool">Anthropic API (Claude)</div>
       </div>
       <div class="pstack">
-        <div class="pstack-label">Code &amp; deploy</div>
-        <a class="pstack-tool pstack-link" href="https://github.com/Sophia-create94/focus-forest" target="_blank" rel="noopener">GitHub ↗</a>
-        <div class="pstack-tool">Vercel</div>
+        <div class="pstack-label">Code</div>
+        <div class="pstack-tool">Runs locally</div>
       </div>
       </div>
     </div>
     <div class="pbody">
-      <div class="pbody-main">
-        <h2 class="ptitle">Focus Forest</h2>
-        <div class="pmeta">3-in-1 motivational mobile app · AI-built prototype</div>
-        <p class="pdesc">Focus Forest is an easy-to-use, jungle-themed mobile app that combines a calendar, to-do list, and countdown in one place. It helps people remember their schedule and events, and gives them a clear overview of what's ahead. Staying organized is rewarding: as people keep up with their plans, they level up and unlock new animals in an animated jungle.</p>
-        <p class="pdesc">Back in 2022, while switching from architecture into UX design, I researched and designed Focus Forest, taking it from surveys, user interviews, and competitive analysis through to wireframes and high-fidelity screens. In 2026, I came back to it with a fresh, AI-driven approach, rebuilding the original designs into a live, interactive prototype.</p>
+      <h2 class="ptitle">Job Radar</h2>
+      <div class="pmeta">AI-native dashboard · Scores live job listings</div>
+      <div class="jr-cols">
+      <p class="pdesc">Every morning of my job search began the same way: opening the careers page of each company I most wanted to work for, in case a role had appeared overnight. An hour gone before the day had started; most of it just to find the roles, let alone read them and work out whether I was a fit and should apply.</p>
+      <p class="pdesc">Job Radar watches ~70 companies I chose by hand across Europe: a deliberate shortlist of places I'd actually want to work, not a giant job board. Each morning it surfaces only the new product-design roles. Claude reads and scores each role against my profile; the apply, needs a reason, or skip call follows rules I defined, with the reasoning kept alongside. One page, checked once, tells me where to spend my attention, so my time goes to what actually matters: sending convincing applications.</p>
+      <p class="pdesc"><b>Learned:</b> The hard part was teaching Claude what a good job match for my profile means (and when it should recommend I not apply), not just matching keywords.</p>
       </div>
-      <div class="proj-extra">
-        <div class="metrics">
-          <div class="metric"><div class="mn">50</div><div class="ml">Research participants</div></div>
-          <div class="metric"><div class="mn">6</div><div class="ml">Key screens<br>built</div></div>
-        </div>
-        <div class="actions">
-          <a class="btn primary" href="work/focus-forest.html">Read case study →</a>
-          <a class="btn primary" href="https://focus-forest-sophia.vercel.app/" target="_blank" rel="noopener"><span class="live-dot" aria-hidden="true"></span>View prototype ↗</a>
-        </div>
-      </div>
+      <!-- No live link yet (not deployed to Vercel) — the videos below are the demo. Add a "View prototype ↗" CTA here if/when it goes live. -->
     </div>
-    <div class="stage">
-      <div class="phone">
-        <i class="ph-side ph-mute"></i>
-        <i class="ph-side ph-volup"></i>
-        <i class="ph-side ph-voldn"></i>
-        <i class="ph-side ph-power"></i>
-        <div class="screen" style="--app-top:#558a6e">
-          <div class="statusbar">
-            <span class="sb-time">9:41</span>
-            <span class="sb-icons">
-              <svg class="sb-ic" viewBox="0 0 19 12" aria-hidden="true">
-                <rect x="0" y="8" width="3" height="4" rx="1"/>
-                <rect x="5.3" y="5.3" width="3" height="6.7" rx="1"/>
-                <rect x="10.6" y="2.6" width="3" height="9.4" rx="1"/>
-                <rect x="15.9" y="0" width="3" height="12" rx="1"/>
-              </svg>
-              <svg class="sb-ic sb-wifi" viewBox="0 0 16 13" aria-hidden="true">
-                <path d="M1.5 4.6a10 10 0 0 1 13 0"/>
-                <path d="M4 7.3a6.2 6.2 0 0 1 8 0"/>
-                <path d="M6.5 10a2.6 2.6 0 0 1 3 0"/>
-              </svg>
-              <span class="sb-batt">
-                <svg viewBox="0 0 27 13" aria-hidden="true">
-                  <rect x="0.6" y="0.6" width="22.4" height="11.8" rx="3.4" fill="none" stroke="currentColor" stroke-opacity=".4" stroke-width="1.1"/>
-                  <rect x="2.2" y="2.2" width="16.6" height="8.6" rx="1.8" fill="currentColor"/>
-                  <path d="M24.6 4.3c.95.25 1.6 1.05 1.6 2.2s-.65 1.95-1.6 2.2V4.3Z" fill="currentColor" fill-opacity=".5"/>
-                </svg>
-              </span>
-            </span>
+    <!-- DESKTOP frame — Job Radar recording; browser chrome removed for a clean app viewport -->
+    <div class="stage stage-desktop">
+      <div class="monitor">
+        <div class="mon-device">
+          <div class="mon-inner">
+            <div class="mon-screen">
+              <video autoplay loop muted playsinline poster="assets/job-radar-desktop-poster.jpg?v=2">
+                <source src="assets/job-radar-desktop-demo.mp4?v=3" type="video/mp4">
+              </video>
+            </div>
           </div>
-          <div class="notch">
-            <span class="n-speaker"></span>
-            <span class="n-cam"></span>
-          </div>
-          <video class="ff-video" autoplay loop muted playsinline poster="assets/focus-forest-poster.jpg">
-            <source src="assets/focus-forest-demo.mp4?v=2" type="video/mp4">
-          </video>
         </div>
       </div>
+      <p class="jr-caption">Note: The companies are real. I've anonymized their names in this demo.</p>
     </div>
   </section>
+
 
   <!-- Project 02: Ada (accommodation booking app) — PLACEHOLDER. TODO when ready:
        real stats, point CTAs at work/ada.html + the live Vercel URL, set GitHub link, swap the visual. -->
@@ -291,6 +252,87 @@
               </video>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="project" id="focus-forest">
+    <div class="pcol-left">
+      <div class="pnum">03</div>
+      <div class="stack-group">
+      <div class="pstack">
+        <div class="pstack-label">Design (2022)</div>
+        <div class="pstack-tool">Figma</div>
+      </div>
+      <div class="pstack">
+        <div class="pstack-label">AI Build (2026)</div>
+        <div class="pstack-tool">Claude Design</div>
+        <div class="pstack-tool">Claude Code</div>
+        <div class="pstack-tool">Cursor</div>
+      </div>
+      <div class="pstack">
+        <div class="pstack-label">Code &amp; deploy</div>
+        <a class="pstack-tool pstack-link" href="https://github.com/Sophia-create94/focus-forest" target="_blank" rel="noopener">GitHub ↗</a>
+        <div class="pstack-tool">Vercel</div>
+      </div>
+      </div>
+    </div>
+    <div class="pbody">
+      <div class="pbody-main">
+        <h2 class="ptitle">Focus Forest</h2>
+        <div class="pmeta">3-in-1 motivational mobile app · AI-built prototype</div>
+        <p class="pdesc">Focus Forest is an easy-to-use, jungle-themed mobile app that combines a calendar, to-do list, and countdown in one place. It helps people remember their schedule and events, and gives them a clear overview of what's ahead. Staying organized is rewarding: as people keep up with their plans, they level up and unlock new animals in an animated jungle.</p>
+        <p class="pdesc">Back in 2022, while switching from architecture into UX design, I researched and designed Focus Forest, taking it from surveys, user interviews, and competitive analysis through to wireframes and high-fidelity screens. In 2026, I came back to it with a fresh, AI-driven approach, rebuilding the original designs into a live, interactive prototype.</p>
+      </div>
+      <div class="proj-extra">
+        <div class="metrics">
+          <div class="metric"><div class="mn">50</div><div class="ml">Research participants</div></div>
+          <div class="metric"><div class="mn">6</div><div class="ml">Key screens<br>built</div></div>
+        </div>
+        <div class="actions">
+          <a class="btn primary" href="work/focus-forest.html">Read case study →</a>
+          <a class="btn primary" href="https://focus-forest-sophia.vercel.app/" target="_blank" rel="noopener"><span class="live-dot" aria-hidden="true"></span>View prototype ↗</a>
+        </div>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="phone">
+        <i class="ph-side ph-mute"></i>
+        <i class="ph-side ph-volup"></i>
+        <i class="ph-side ph-voldn"></i>
+        <i class="ph-side ph-power"></i>
+        <div class="screen" style="--app-top:#558a6e">
+          <div class="statusbar">
+            <span class="sb-time">9:41</span>
+            <span class="sb-icons">
+              <svg class="sb-ic" viewBox="0 0 19 12" aria-hidden="true">
+                <rect x="0" y="8" width="3" height="4" rx="1"/>
+                <rect x="5.3" y="5.3" width="3" height="6.7" rx="1"/>
+                <rect x="10.6" y="2.6" width="3" height="9.4" rx="1"/>
+                <rect x="15.9" y="0" width="3" height="12" rx="1"/>
+              </svg>
+              <svg class="sb-ic sb-wifi" viewBox="0 0 16 13" aria-hidden="true">
+                <path d="M1.5 4.6a10 10 0 0 1 13 0"/>
+                <path d="M4 7.3a6.2 6.2 0 0 1 8 0"/>
+                <path d="M6.5 10a2.6 2.6 0 0 1 3 0"/>
+              </svg>
+              <span class="sb-batt">
+                <svg viewBox="0 0 27 13" aria-hidden="true">
+                  <rect x="0.6" y="0.6" width="22.4" height="11.8" rx="3.4" fill="none" stroke="currentColor" stroke-opacity=".4" stroke-width="1.1"/>
+                  <rect x="2.2" y="2.2" width="16.6" height="8.6" rx="1.8" fill="currentColor"/>
+                  <path d="M24.6 4.3c.95.25 1.6 1.05 1.6 2.2s-.65 1.95-1.6 2.2V4.3Z" fill="currentColor" fill-opacity=".5"/>
+                </svg>
+              </span>
+            </span>
+          </div>
+          <div class="notch">
+            <span class="n-speaker"></span>
+            <span class="n-cam"></span>
+          </div>
+          <video class="ff-video" autoplay loop muted playsinline poster="assets/focus-forest-poster.jpg">
+            <source src="assets/focus-forest-demo.mp4?v=2" type="video/mp4">
+          </video>
         </div>
       </div>
     </div>

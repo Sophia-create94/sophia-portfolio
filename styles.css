@@ -192,8 +192,8 @@
   .lab-band .work-label{color:#141414;padding:0}
   /* exception to the muted-on-cream rule: icons keep the bright --accent (the flask inherits it) */
   .lab-intro{color:#5b5b5b;font-size:16px;margin:14px 0 22px;line-height:1.55}
-  .lab-rule{border:0;height:1px;background:rgba(20,20,20,.12);margin:0 0 26px}
-  .lab-rule.foot{margin:56px 0 34px}
+  .lab-rule{border:0;height:1px;background:rgba(20,20,20,.12);margin:0}
+  .lab-rule.foot{margin:0 0 34px}
   .lab-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
   .lab-proof{margin-top:30px;max-width:62ch;font-size:14px;line-height:1.55;color:#5b5b5b}
   .lab-card{display:flex;flex-direction:column;gap:10px;background:#ffffff;border-radius:16px;
@@ -223,7 +223,7 @@
   .lab-link.code:hover{color:#1f1f1f;text-decoration:underline;text-underline-offset:3px}
 
   /* ---- experiment shown as a full project card (Focus Forest layout), recoloured for the cream band ---- */
-  .lab-band .project{padding:8px 0 0;scroll-margin-top:90px}
+  .lab-band .project{padding:60px 0;scroll-margin-top:90px}
   .lab-band .pnum{color:#cfc8bd}
   .lab-band .ptitle{color:#141414}
   .lab-band .pmeta{color:#8a8a8a}
@@ -277,9 +277,15 @@
   @media (min-width:861px){ #j-train .pbody{margin-top:16px} #j-train .stage{margin-top:22px} }
   /* Ada: phone (mobile recording) stays in the right column; the desktop browser window (J-train style)
      spans full width on the row below, under the description. */
-  #ada .stage-desktop{grid-column:1 / -1;justify-content:flex-start;margin-top:34px}
-  #ada .stage-desktop .monitor{max-width:none}
-
+  #ada .stage-desktop, #job-radar .stage-desktop{grid-column:1 / -1;justify-content:flex-start;margin-top:34px}
+  #ada .stage-desktop .monitor, #job-radar .stage-desktop .monitor{max-width:none}
+  #job-radar .stage-desktop{flex-direction:column;align-items:stretch}
+  .jr-caption{font-family:var(--sans);font-size:13px;color:#dcdcdc;margin:14px 0 0}
+  /* Job Radar: no phone, so the copy spans col2+col3 and flows into two columns */
+  #job-radar .pbody{grid-column:2 / -1}
+  #job-radar .jr-cols{columns:2;column-gap:clamp(30px,4vw,54px)}
+  #job-radar .jr-cols .pdesc{max-width:none;margin-bottom:20px}
+  @media (max-width:860px){ #job-radar .pbody{grid-column:auto} #job-radar .jr-cols{columns:1} }
 
   /* ---------- footer ---------- */
   footer{padding:70px 0 50px;display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:24px}
