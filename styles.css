@@ -279,12 +279,13 @@
      spans full width on the row below, under the description. */
   #ada .stage-desktop, #job-radar .stage-desktop{grid-column:1 / -1;justify-content:flex-start;margin-top:34px}
   #ada .stage-desktop .monitor, #job-radar .stage-desktop .monitor{max-width:none}
-  #job-radar .stage-desktop{flex-direction:column;align-items:stretch}
+  #job-radar .stage-desktop{flex-direction:column;align-items:stretch;margin-top:8px}
   .jr-caption{font-family:var(--sans);font-size:13px;color:#dcdcdc;margin:14px 0 0}
   /* Job Radar: no phone, so the copy spans col2+col3 and flows into two columns */
   #job-radar .pbody{grid-column:2 / -1}
-  #job-radar .jr-cols{columns:2;column-gap:clamp(30px,4vw,54px)}
-  #job-radar .jr-cols .pdesc{max-width:none;margin-bottom:20px}
+  #job-radar .jr-cols{columns:2;column-gap:clamp(30px,4vw,54px);margin-bottom:26px}
+  #job-radar .metrics{margin-bottom:0}
+  #job-radar .jr-cols .pdesc{max-width:none}
   @media (max-width:860px){ #job-radar .pbody{grid-column:auto} #job-radar .jr-cols{columns:1} }
 
   /* ---------- footer ---------- */
