@@ -48,7 +48,8 @@
   .hl{font-family:var(--head);font-weight:600;line-height:1.02;letter-spacing:-.02em;
       font-size:clamp(40px,7vw,90px)}
   .hl-l1,.hl-l2{display:block;will-change:transform}
-  .hl .rotate{color:var(--accent);display:inline-block;vertical-align:top;
+  .hl-l2{perspective:720px}
+  .hl .rotate{color:var(--accent);display:inline-block;vertical-align:top;will-change:transform;transform-origin:50% 60%;
             transition:opacity .46s cubic-bezier(.4,0,.2,1), filter .46s cubic-bezier(.4,0,.2,1)}
   .hl .rotate.swap{opacity:0;filter:blur(5px)}
   .now{display:flex;align-items:center;gap:10px;margin-top:34px;color:var(--muted);font-size:15px;flex-wrap:wrap}
@@ -402,3 +403,37 @@
   .cs-cols{display:grid;grid-template-columns:1fr 1fr;gap:28px}
   @media(max-width:760px){.cs-cols{grid-template-columns:1fr}}
   .cs-cta{display:flex;flex-wrap:wrap;gap:14px;padding:40px 0 8px}
+
+
+  /* ============ Hero: day/night icon ============ */
+  .daynight{display:inline-flex;align-items:center;margin-left:9px;vertical-align:-3px;opacity:0;transition:opacity .6s ease}
+  .daynight.in{opacity:1}
+  .daynight svg{width:16px;height:16px;display:block}
+  .daynight.dn-sun{color:var(--accent)}
+  .daynight.dn-moon{color:#aab4cc}
+  /* ============ Hero: coffee mug by Connect ============ */
+  .pxcup-wrap{position:relative;top:-4px;display:inline-block;vertical-align:middle;margin-left:0;line-height:0;text-decoration:none;appearance:none;-webkit-appearance:none;background:none;border:0;padding:0;font:inherit;cursor:pointer}
+  .pxcup{width:34px;height:auto;overflow:visible;display:block;transition:transform .3s cubic-bezier(.2,.7,.2,1)}
+  .pxcup-wrap:hover .pxcup,.pxcup-wrap:focus-visible .pxcup{transform:translateY(-2px)}
+  .pxcup-wrap:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
+  .pxcup .brew{transition:opacity .3s ease}
+  .pxcup-wrap:hover .brew,.pxcup-wrap:focus-visible .brew{opacity:1}
+  .pxcup .csteam{opacity:0}
+  .pxcup-wrap .cbubble{position:absolute;left:calc(100% + 10px);top:50%;transform:translate(-6px,-50%);font-family:var(--head);font-weight:600;font-size:12.5px;letter-spacing:.01em;text-transform:none;color:var(--accent);white-space:nowrap;opacity:0;transition:opacity .35s ease,transform .5s cubic-bezier(.2,.7,.2,1);pointer-events:none}
+  .pxcup-wrap:hover .cbubble,.pxcup-wrap:focus-visible .cbubble{opacity:1;transform:translate(0,-50%)}
+  .pxcup .cdrop{opacity:0}
+  .pxcup .cdrop.go{animation:cdropk .5s cubic-bezier(.4,0,.6,1)}
+  @keyframes cdropk{0%{opacity:0;transform:translateY(-12px)}30%{opacity:1}85%{opacity:1;transform:translateY(0)}100%{opacity:0;transform:translateY(0)}}
+  .pxcup .cripple{opacity:0;transform-box:fill-box;transform-origin:center}
+  .pxcup .cripple.go{animation:cripk .6s ease-out .3s}
+  @keyframes cripk{0%{opacity:.6;transform:scale(.4)}100%{opacity:0;transform:scale(1.5)}}
+  @media (prefers-reduced-motion:no-preference){
+    .pxcup .csteam{animation:pxsteam 3.6s ease-in-out infinite}
+    .pxcup .csteam.s2{animation-delay:1.3s}
+    @keyframes pxsteam{0%{opacity:0;transform:translateY(3px)}30%{opacity:.6}70%{opacity:.35}100%{opacity:0;transform:translateY(-7px)}}
+  }
+  /* ============ Hero: night sky ============ */
+  .hero{position:relative}
+  .hero > div, .hero > aside{position:relative;z-index:1}
+  #starfield{position:absolute;inset:0;z-index:0;pointer-events:none;opacity:0;transition:opacity 1.4s ease}
+  #starfield.on{opacity:1}

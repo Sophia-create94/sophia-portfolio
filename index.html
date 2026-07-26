@@ -53,7 +53,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=72">
+<link rel="stylesheet" href="styles.css?v=74">
 </head>
 <body>
 <div class="wrap">
@@ -81,7 +81,7 @@
       </h1>
       <div class="now reveal" style="animation-delay:.3s">
         <span class="dot"></span>
-        <span class="now-text">Currently nomadic in <span id="nomad-loc">France</span> · <span id="localtime" class="ltime"></span></span>
+        <span class="now-text">Currently nomadic in <span id="nomad-loc">Germany</span> · <span id="localtime" class="ltime"></span> <span class="daynight" id="daynight" aria-hidden="true"></span></span>
       </div>
     </div>
 
@@ -103,7 +103,17 @@
         <div class="val muted">Figma · Claude · Codex · Cursor</div>
       </div>
       <div class="grp">
-        <div class="lbl">Connect</div>
+        <div class="lbl" style="display:inline-flex;align-items:center;gap:10px"><span>Connect</span><button type="button" class="pxcup-wrap" aria-label="Coffee — happy to chat over a coffee"><svg class="pxcup" viewBox="0 0 44 44" aria-hidden="true">
+          <path class="csteam" d="M18,11 c-2,-3 2,-5 0,-8" fill="none" stroke="var(--muted)" stroke-width="2.2" stroke-linecap="round"/>
+          <path class="csteam s2" d="M25,11 c-2,-3 2,-5 0,-8" fill="none" stroke="var(--muted)" stroke-width="2.2" stroke-linecap="round"/>
+          <ellipse cx="20" cy="36" rx="13" ry="2.4" fill="none" stroke="#e9e2d5" stroke-width="1.8"/>
+          <path d="M9,17 C9,30 12,34 20,34 C28,34 31,30 31,17" fill="none" stroke="#e9e2d5" stroke-width="1.8" stroke-linecap="round"/>
+          <path d="M31,21 c5,1 5,8 -2,9" fill="none" stroke="#e9e2d5" stroke-width="1.8" stroke-linecap="round"/>
+          <ellipse cx="20" cy="17" rx="11" ry="2.8" fill="none" stroke="#e9e2d5" stroke-width="1.8"/>
+          <ellipse class="brew" cx="20" cy="17" rx="8" ry="1.9" fill="var(--accent)" opacity=".85"/>
+          <ellipse class="cripple" cx="20" cy="17" rx="6" ry="1.6" fill="none" stroke="#f2e6d3" stroke-width="1"/>
+          <circle class="cdrop" cx="20" cy="17" r="2.4" fill="#f2e6d3"/>
+        </svg><span class="cbubble">Happy to chat over a coffee?</span></button></div>
         <div class="val muted"><a href="https://www.linkedin.com/in/sophiadesign/" target="_blank" rel="noopener">LinkedIn</a><span class="sep">·</span><a href="mailto:hello@sophia-ux.com">Email</a><span class="sep">·</span><a href="https://www.instagram.com/sophiamueller_ux/" target="_blank" rel="noopener">Instagram</a><span class="sep">·</span><a href="https://dribbble.com/FiaCharly" target="_blank" rel="noopener">Dribbble</a></div>
       </div>
     </aside>
@@ -438,7 +448,7 @@
 
 <button class="totop" aria-label="Back to top">↑</button>
 
-<script src="main.js?v=3"></script>
+<script src="main.js?v=6"></script>
 <script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>
