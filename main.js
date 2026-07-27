@@ -243,15 +243,14 @@
     function hourIn(tz){ try{ return parseInt(new Intl.DateTimeFormat('en-US',{hour:'numeric',hourCycle:'h23',timeZone:tz}).format(new Date()),10); }catch(e){ return new Date().getHours(); } }
     function isDay(){ var h=hourIn(PARIS); return h>=9 && h<22; }  // sun 9:00-21:59, moon 22:00-8:59
     var cv=null, ctx=null, stars=[], W=0,H=0,DPR=1, running=false, night=false;
-    if(hero){ cv=document.createElement('canvas'); cv.id='starfield'; cv.setAttribute('aria-hidden','true'); hero.insertBefore(cv, hero.firstChild); ctx=cv.getContext('2d'); size(); window.addEventListener('resize', size); }
-    function size(){ if(!cv) return; DPR=Math.min(window.devicePixelRatio||1,2); var r=hero.getBoundingClientRect(); W=r.width;H=r.height; cv.width=Math.max(1,W*DPR); cv.height=Math.max(1,H*DPR); ctx.setTransform(DPR,0,0,DPR,0,0); make(); if(night) draw(0); }
+    if(hero){ cv=document.createElement('canvas'); cv.id='starfield'; cv.setAttribute('aria-hidden','true'); hero.insertBefore(cv, hero.firstChild); ctx=cv.getContext('2d'); size(); window.addEventListener('resize', size); cv.classList.add('on'); if(reduce){ draw(0); } else { running=true; requestAnimationFrame(loop); } }
+    function size(){ if(!cv) return; DPR=Math.min(window.devicePixelRatio||1,2); var r=hero.getBoundingClientRect(); W=r.width;H=r.height; cv.width=Math.max(1,W*DPR); cv.height=Math.max(1,H*DPR); ctx.setTransform(DPR,0,0,DPR,0,0); make(); draw(0); }
     function make(){ stars=[]; var n=Math.max(24, Math.round(W*H/11000)); for(var i=0;i<n;i++){ stars.push({x:Math.random()*W,y:Math.random()*H,r:Math.random()*1.2+0.3,ph:Math.random()*6.28,sp:0.4+Math.random()*0.9,vx:-(0.04+Math.random()*0.12)}); } }
     function draw(t){ ctx.clearRect(0,0,W,H); for(var i=0;i<stars.length;i++){ var s=stars[i]; if(!reduce){ s.x+=s.vx; if(s.x<-2){ s.x=W+2; s.y=Math.random()*H; } } var a=reduce?0.55:(0.3+0.5*(0.5+0.5*Math.sin(t/900*s.sp+s.ph))); ctx.beginPath(); ctx.arc(s.x,s.y,s.r,0,7); ctx.fillStyle='rgba(255,255,255,'+a.toFixed(2)+')'; ctx.fill(); } }
-    function loop(t){ if(!night||reduce){ running=false; return; } draw(t); requestAnimationFrame(loop); }
+    function loop(t){ if(reduce){ running=false; return; } draw(t); requestAnimationFrame(loop); }
     function render(){
       night=!isDay();
       if(el){ el.classList.remove('dn-sun','dn-moon'); el.classList.add(night?'dn-moon':'dn-sun'); el.innerHTML=night?MOON:SUN; el.setAttribute('title', night?'Night where I am':'Daytime where I am'); el.classList.add('in'); }
-      if(cv){ cv.classList.toggle('on', night); if(night){ if(reduce){ draw(0); } else if(!running){ running=true; requestAnimationFrame(loop); } } else { ctx.clearRect(0,0,W,H); } }
     }
     render(); setInterval(render, 60000);
   })();
