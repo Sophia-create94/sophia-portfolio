@@ -7,12 +7,12 @@
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <title>Job Radar — AI-native job-search dashboard · Sophia Müller</title>
-<meta name="description" content="Job Radar: an AI-native dashboard I built end to end that watches ~70 companies and scores each new role against my profile. A product + AI build case study.">
+<meta name="description" content="Job Radar: an AI-native dashboard I built end to end that watches 130+ companies and scores each new role against my profile. A product + AI build case study.">
 <link rel="canonical" href="https://sophia-ux.com/work/job-radar">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://sophia-ux.com/work/job-radar">
 <meta property="og:title" content="Job Radar — AI-native job-search dashboard · Sophia Müller">
-<meta property="og:description" content="An AI-native dashboard I built end to end that watches ~70 companies and scores each new role against my profile. A product + AI build case study.">
+<meta property="og:description" content="An AI-native dashboard I built end to end that watches 130+ companies and scores each new role against my profile. A product + AI build case study.">
 <meta property="og:image" content="https://sophia-ux.com/assets/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -20,7 +20,7 @@
 <meta property="og:site_name" content="Sophia Müller">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Job Radar — AI-native job-search dashboard · Sophia Müller">
-<meta name="twitter:description" content="An AI-native dashboard I built end to end that watches ~70 companies and scores each new role against my profile. A product + AI build case study.">
+<meta name="twitter:description" content="An AI-native dashboard I built end to end that watches 130+ companies and scores each new role against my profile. A product + AI build case study.">
 <meta name="twitter:image" content="https://sophia-ux.com/assets/og-image.jpg">
 <meta name="twitter:image:alt" content="Sophia Müller — Product Designer portfolio">
 <script type="application/ld+json">
@@ -30,7 +30,7 @@
     {
       "@type": "CreativeWork",
       "name": "Job Radar — AI-native job-search dashboard",
-      "description": "An AI-native dashboard, built end to end by directing Claude Code, that watches ~70 hand-picked companies and scores each new role against a profile, opening each morning with a verdict instead of a search.",
+      "description": "An AI-native dashboard, built end to end by directing Claude Code, that watches 130+ hand-picked companies and scores each new role against a profile, opening each morning with a verdict instead of a search.",
       "url": "https://sophia-ux.com/work/job-radar",
       "image": "https://sophia-ux.com/assets/og-image.jpg",
       "author": { "@type": "Person", "name": "Sophia Müller", "url": "https://sophia-ux.com/" },
@@ -360,7 +360,7 @@ details.more .more-body{margin-top:20px}
 
       <div class="block" style="padding-top:26px">
         <div class="prose">
-          <p><span class="hi">Job Radar watches ~70 companies I chose by hand</span> and, each morning, surfaces only the new product-design roles. Claude reads and scores each one against my profile; the apply, needs a reason, or skip call follows rules I defined, with the reasoning kept alongside. One page, checked once, tells me where to spend my attention.</p>
+          <p><span class="hi">Job Radar watches 130+ companies I chose by hand</span> and, each morning, surfaces only the new product-design roles. Claude reads and scores each one against my profile; the apply, needs a reason, or skip call follows rules I defined, with the reasoning kept alongside. One page, checked once, tells me where to spend my attention.</p>
         </div>
         <p class="naming"><strong>On naming:</strong> in this case study, "Claude" refers to the model; "Claude Code" and the "Anthropic API" are separate Anthropic products.</p>
         <p class="naming"><strong>On the demo:</strong> Job Radar runs locally, watching my private shortlist and reading my own scoring rules. The companies are real; I've anonymized their names in the demo.</p>
@@ -384,7 +384,7 @@ details.more .more-body{margin-top:20px}
       <p class="kicker">Building with AI</p>
       <h2 class="h">A workflow where each tool had a different job</h2>
       <div class="prose">
-        <p>I built the whole dashboard end to end by directing Claude Code: the data pipeline, integrations with 18 different hiring systems, the scoring, and the interface. <span class="hi">It runs locally on purpose,</span> since it watches my private shortlist and reads my own scoring rules.</p>
+        <p>I built the whole dashboard end to end by directing Claude Code: the data pipeline, integrations with 20+ different hiring systems, the scoring, and the interface. <span class="hi">It runs locally on purpose,</span> since it watches my private shortlist and reads my own scoring rules.</p>
         <p>The look started as a design draft. I gathered interface inspiration on Dribbble, fed it to Claude, and had it generate three variations of the dashboard. I picked the direction I wanted, built it out with Claude Code, and kept refining it with my own design judgment as the real data came in. I kept the judgment for myself and let each tool do what it does best:</p>
       </div>
       <div class="cardgrid g3">
@@ -398,7 +398,7 @@ details.more .more-body{margin-top:20px}
           <div class="card-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 8l-4 4 4 4"/><path d="M15 8l4 4-4 4"/></svg></div>
           <span class="card-num">02</span>
           <h4 class="card-t">Claude Code</h4>
-          <p class="card-b">The builder. It wrote the data pipeline, the 18 hiring-system integrations, the scoring, and the interface, all directed and verified by me.</p>
+          <p class="card-b">The builder. It wrote the data pipeline, the 20+ hiring-system integrations, the scoring, and the interface, all directed and verified by me.</p>
         </div>
         <div class="card">
           <div class="card-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
@@ -416,7 +416,7 @@ details.more .more-body{margin-top:20px}
           <h3 class="sub">Phase 02: Pipeline</h3>
           <div class="prose"><p>A linear flow: fetch every company's board, filter to product-design roles, keep only what's new, score it.</p></div>
           <h3 class="sub">Phase 03: Integrations</h3>
-          <div class="prose"><p>Turned 18 different hiring systems into one shared format, so the rest of the app treats every role the same, no matter where it came from.</p></div>
+          <div class="prose"><p>Turned 20+ different hiring systems into one shared format, so the rest of the app treats every role the same, no matter where it came from.</p></div>
           <h3 class="sub">Phase 04: Scoring</h3>
           <div class="prose"><p>Wrote the profile and prompt, broke fit into sub-scores, then computed the overall fit and verdict in code from those scores.</p></div>
           <h3 class="sub">Phase 05: Interface</h3>
@@ -498,7 +498,7 @@ details.more .more-body{margin-top:20px}
       </div>
       <p class="demo-cap">The companies are real; I've anonymized their names in this demo.</p>
       <div class="prose" style="margin-top:18px">
-        <p>It runs locally, which was a deliberate choice. The video above shows a full morning of new roles being scored and sorted. <span class="hi">Built with Claude Code;</span> TypeScript and Node; 18 hiring-system integrations; Claude for scoring.</p>
+        <p>It runs locally, which was a deliberate choice. The video above shows a full morning of new roles being scored and sorted. <span class="hi">Built with Claude Code;</span> TypeScript and Node; 20+ hiring-system integrations; Claude for scoring.</p>
       </div>
     </section>
 
