@@ -214,7 +214,7 @@
 <div class="bar">
   <a href="/">← sophia-ux.com</a>
   <span class="bar-actions">
-    <a href="assets/Sophia%20M%C3%BCller_Senior%20Product%20Designer_CV.pdf" download="Sophia Müller_Senior Product Designer_CV.pdf">Download PDF ↓</a>
+    <a href="assets/Sophia_Mueller_Senior_Product_Designer_CV.pdf" download="Sophia_Mueller_Senior_Product_Designer_CV.pdf">Download PDF ↓</a>
     <button type="button" onclick="printCV()">Print</button>
   </span>
 </div>
@@ -361,7 +361,7 @@
      real title (kept clean for the browser tab and SEO). */
   function printCV(){
     var orig = document.title;
-    document.title = 'Sophia Müller_Senior Product Designer_CV';
+    document.title = 'Sophia_Mueller_Senior_Product_Designer_CV';
     window.addEventListener('afterprint', function restore(){
       document.title = orig;
       window.removeEventListener('afterprint', restore);
