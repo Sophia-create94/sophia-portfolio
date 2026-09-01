@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<!--
+  Sophia Müller — CV
+  Print: Chrome → Save as PDF → A4 · Margins: None · Background graphics: ON
+  Verify after every export: open the PDF, Ctrl+A, copy, paste into a plain text
+  editor, and search for "Crazy Egg", "AUG 2022", "Sophia Müller".
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Sophia Müller — Senior Product Designer · CV</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="description" content="CV of Sophia Müller — Senior Product Designer integrating AI across the full UX process.">
+<link rel="canonical" href="https://sophia-ux.com/cv">
+<meta property="og:title" content="Sophia Müller — Senior Product Designer · CV">
+<meta property="og:description" content="CV of Sophia Müller — Senior Product Designer integrating AI across the full UX process.">
+<meta property="og:url" content="https://sophia-ux.com/cv">
+<meta property="og:type" content="profile">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Open+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    /* Palette — taken from your portfolio's styles.css */
+    --paper:      #ffffff;
+    --ink:        #141414;   /* names, job titles, emphasis */
+    --body:       #454545;   /* body copy */
+    --accent:     #b35145;   /* section headings, company names */
+    --hairline:   #e2ded6;
+
+    /* Type — swap --font-body to 'Open Sans' for the portfolio pairing */
+    --font-display: 'Urbanist', system-ui, sans-serif;
+    --font-body:    'Urbanist', system-ui, sans-serif;
+
+    /* Layout */
+    --page-w:   210mm;
+    --page-h:   297mm;
+    --pad-y:    11mm;
+    --pad-x:    12mm;
+    --col-gap:  9mm;
+    --side-w:   52mm;   /* right sidebar */
+  }
+
+  @page { size: A4; margin: 0; }
+
+  *{ box-sizing: border-box; }
+
+  html,body{
+    margin:0; padding:0;
+    background:#eceae6;
+    font-family: var(--font-body);
+    color: var(--body);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page{
+    width: var(--page-w);
+    min-height: var(--page-h);
+    margin: 8mm auto;
+    padding: var(--pad-y) var(--pad-x);
+    background: var(--paper);
+    box-shadow: 0 2px 18px rgba(0,0,0,.10);
+
+    /* main column first in the DOM → text extracts top-to-bottom, then sidebar */
+    display: grid;
+    grid-template-columns: 1fr var(--side-w);
+    column-gap: var(--col-gap);
+    align-content: start;
+  }
+
+  /* ---------- header ---------- */
+  .name{
+    font-family: var(--font-display);
+    font-size: 25pt; font-weight: 700; letter-spacing: -.02em;
+    color: var(--ink);
+    margin: 0 0 2.5mm;
+  }
+  .name em{ font-style: normal; color: var(--accent); }
+
+  .tagline{
+    font-size: 9.5pt; font-style: italic; line-height: 1.45;
+    margin: 0 0 1.2mm; max-width: 105mm;
+  }
+  .tagline strong{ font-weight: 700; font-style: italic; color: var(--ink); }
+
+  .locale{
+    font-size: 9.5pt; font-style: italic;
+    margin: 0 0 7mm;
+  }
+
+  /* ---------- shared ---------- */
+  h2{
+    font-family: var(--font-display);
+    font-size: 13pt; font-weight: 600; letter-spacing: -.01em;
+    color: var(--accent);
+    margin: 0 0 3mm;
+  }
+
+  .col-main{ grid-column: 1; }
+  .side{ grid-column: 2; padding-top: 1mm; }
+
+  /* ---------- roles ---------- */
+  .role{ margin-bottom: 5.5mm; }
+  .role:last-child{ margin-bottom: 0; }
+
+  .role-head{
+    display: flex; justify-content: space-between; align-items: baseline;
+    gap: 4mm; margin-bottom: .8mm;
+  }
+  .role-title{
+    font-size: 10pt; font-weight: 700; color: var(--ink);
+  }
+  .role-dates{
+    font-size: 9pt; color: var(--body); white-space: nowrap;
+  }
+  .role-org{
+    font-size: 10pt; color: var(--accent); margin-bottom: 1.8mm;
+  }
+  .role-note{
+    font-size: 9.5pt; line-height: 1.5; margin: 0 0 1.8mm;
+  }
+
+  /* NOTE: no `position` on li or its marker. A positioned element paints after
+     in-flow content, and Chrome writes the PDF content stream in paint order —
+     which pushes every bullet to the end of the extracted text. Keep the marker
+     inline and use a hanging indent instead. */
+  ul{ list-style: none; margin: 0; padding: 0; }
+  li{
+    padding-left: 3.6mm;
+    font-size: 9.5pt; line-height: 1.5;
+    margin-bottom: 1.4mm;
+  }
+  /* Fixed-width inline-block marker: the glyph's own width varies with the
+     font, so pin it to exactly the padding value or wrapped lines won't line
+     up with the first line. Still in-flow — no `position`, see the note above. */
+  li::before{
+    content: "·";
+    display: inline-block;
+    width: 3.6mm;
+    margin-left: -3.6mm;
+    color: var(--body); font-weight: 700;
+  }
+  li strong{ font-weight: 700; color: var(--ink); }
+
+  .block{ margin-bottom: 7mm; }
+
+  /* ---------- sidebar ---------- */
+  .side h2{ margin-top: 0; }
+  .side .block + .block h2{ margin-top: 0; }
+
+  .contact{ margin-bottom: 6mm; }
+  .contact dt{
+    font-size: 9.5pt; font-weight: 700; color: var(--ink); margin-top: 2.6mm;
+  }
+  .contact dt:first-child{ margin-top: 0; }
+  .contact dd{
+    margin: 0; font-size: 9.5pt; line-height: 1.4;
+  }
+  .contact dd a{ color: var(--body); text-decoration: underline; }
+  .contact .aside{ font-size: 9pt; }
+
+  .list{ font-size: 9.5pt; line-height: 1.55; }
+  .list div{ margin-bottom: 1.1mm; }
+
+  .tool-group{ margin-bottom: 3.4mm; }
+  .tool-group .label{
+    font-size: 9.5pt; color: var(--accent); margin-bottom: .6mm;
+  }
+  .tool-group div{ font-size: 9.5pt; line-height: 1.45; }
+
+  /* ---------- screen chrome (never printed) ---------- */
+  .bar{
+    width: var(--page-w); margin: 6mm auto -2mm; padding: 0 var(--pad-x);
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 10pt; color: var(--body);
+  }
+  .bar a, .bar button{
+    font: inherit; font-family: var(--font-body);
+    color: var(--body); background: none; border: 0; padding: 0;
+    text-decoration: underline; cursor: pointer;
+  }
+  .bar a:hover, .bar button:hover{ color: var(--accent); }
+  .bar :focus-visible{ outline: 2px solid var(--accent); outline-offset: 3px; }
+  .bar-actions{ display: flex; gap: 18px; align-items: center; }
+
+  /* Phones: A4 is 210mm wide, so collapse to one column on screen only. */
+  @media screen and (max-width: 780px){
+    .bar{ width: auto; margin: 4mm 5mm 0; padding: 0; }
+    .page{
+      width: auto; margin: 4mm 3mm; padding: 8mm 6mm;
+      grid-template-columns: 1fr; row-gap: 6mm;
+    }
+    .col-main, .side{ grid-column: 1; }
+    .side{ padding-top: 0; border-top: 1px solid var(--hairline); padding-top: 6mm; }
+    .tagline{ max-width: none; }
+  }
+
+  /* ---------- print ---------- */
+  @media print{
+    html,body{ background: #fff; }
+    .bar{ display: none; }
+    .page{
+      margin: 0; box-shadow: none; width: auto; min-height: auto;
+    }
+    a{ color: var(--body) !important; }
+  }
+  *{ -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+</style>
+</head>
+<body>
+<div class="bar">
+  <a href="/">← sophia-ux.com</a>
+  <span class="bar-actions">
+    <a href="assets/sophia-mueller-cv.pdf" download="Sophia Müller — Senior Product Designer — CV.pdf">Download PDF ↓</a>
+    <button type="button" onclick="window.print()">Print</button>
+  </span>
+</div>
+
+<div class="page">
+
+  <div class="col-main">
+
+  <h1 class="name">Sophia <em>Müller</em></h1>
+
+  <p class="tagline">Senior Product Designer for <strong>complex B2B SaaS</strong>, integrating AI across the full UX process and building AI-native products of my own</p>
+
+  <p class="locale">Berlin, Germany · open to relocation</p>
+
+  <div class="block">
+    <h2>Experience</h2>
+
+    <div class="role">
+      <div class="role-head">
+        <span class="role-title">Senior Product Designer</span>
+        <span class="role-dates">AUG 2022 - PRESENT</span>
+      </div>
+      <div class="role-org">Crazy Egg · Full-time contract (asynchronous)</div>
+      <ul>
+        <li>One of three designers covering a B2B SaaS product and its marketing site, fully distributed across timezones.</li>
+        <li>Currently leading and running <strong>380 usability sessions</strong> across two UX research studies (240 and 140) on our marketing site and a competitive comparison of several competitors, using Claude Code and structured prompting to surface patterns across transcripts and shape findings into <strong>stakeholder reports</strong>, shaping the design changes now in A/B testing.</li>
+        <li>Evaluated AI features (<strong>500+ outputs from an AI copy editor</strong> and <strong>70+ from a conversational AI chat</strong>) identifying failure modes and, in collaboration with my PM, defining the quality criteria the team ships against.</li>
+        <li>Designing landing pages end-to-end and improving UX across the web app, contributing to and extending our design system with reusable components maintained in Figma.</li>
+      </ul>
+    </div>
+
+    <div class="role">
+      <div class="role-head">
+        <span class="role-title">Product Designer &amp; Co-Founder</span>
+        <span class="role-dates">JAN 2022 - DEC 2024</span>
+      </div>
+      <div class="role-org">FindAsync (remote)</div>
+      <ul>
+        <li>Co-founded a niche job platform connecting jobseekers with async remote companies.</li>
+        <li>Owned UX and brand end-to-end, led the launch, and drove content and social channels.</li>
+        <li>Platform grew to <strong>40k+ monthly visitors</strong> and <strong>8 B2B partnerships</strong>.</li>
+      </ul>
+    </div>
+
+    <div class="role">
+      <div class="role-head">
+        <span class="role-title">Product Designer</span>
+        <span class="role-dates">JAN - NOV 2022</span>
+      </div>
+      <div class="role-org">Freelance (remote)</div>
+      <p class="role-note">Supported a Principal Product Designer across UX flows, wireframes, prototypes, and hi-fi designs for web and mobile.</p>
+    </div>
+
+    <div class="role">
+      <div class="role-head">
+        <span class="role-title">B2B Project &amp; Marketing Support</span>
+        <span class="role-dates">AUG 2013 - OCT 2022</span>
+      </div>
+      <div class="role-org">Town Arc Corporation (NYC) · Ernst &amp; Sohn GmbH (Berlin) · and others</div>
+      <p class="role-note">PM support on client projects; marketing strategy, visuals, and email campaigns; product and data research for finance and e-commerce.</p>
+    </div>
+  </div>
+
+  <div class="block">
+    <h2>Education</h2>
+    <div class="role">
+      <div class="role-head">
+        <span class="role-title">B.Sc. Architecture</span>
+        <span class="role-dates">APRIL 2015 - JAN 2019</span>
+      </div>
+      <div class="role-org">Berliner Hochschule für Technik (BHT) (Berlin, Germany)</div>
+      <p class="role-note">Structuring complex requirements, designing how people move through a system, and visuals: color theory, typography, layout.</p>
+    </div>
+  </div>
+  </div><!-- /.col-main -->
+
+  <aside class="side">
+
+    <dl class="contact">
+      <dt>Email</dt>
+      <dd><a href="mailto:hello@sophia-ux.com">hello@sophia-ux.com</a></dd>
+      <dt>LinkedIn</dt>
+      <dd><a href="https://linkedin.com/in/sophiadesign">linkedin.com/in/sophiadesign</a></dd>
+      <dt>Portfolio</dt>
+      <dd><a href="https://sophia-ux.com">sophia-ux.com</a></dd>
+      <dd class="aside">(live AI builds &amp; case studies)</dd>
+    </dl>
+
+    <div class="block">
+      <h2>Skills</h2>
+      <div class="list">
+        <div>Directing AI Build &amp; Research Tools (vibe coding)</div>
+        <div>AI Evaluation &amp; Quality</div>
+        <div>User Research</div>
+        <div>Usability Testing</div>
+        <div>Information Architecture</div>
+        <div>Systems Thinking</div>
+        <div>Design Systems</div>
+        <div>Prototyping</div>
+        <div>Visual Design</div>
+        <div>Cross-functional / Async Collaboration</div>
+      </div>
+    </div>
+
+    <div class="block">
+      <h2>Tools</h2>
+      <div class="tool-group">
+        <div class="label">Design</div>
+        <div>Figma</div>
+        <div>Sketch</div>
+        <div>Adobe Suite</div>
+      </div>
+      <div class="tool-group">
+        <div class="label">AI build</div>
+        <div>Claude Code, Claude Design</div>
+        <div>OpenAI's Codex</div>
+        <div>Cursor</div>
+      </div>
+      <div class="tool-group">
+        <div class="label">Code &amp; deploy</div>
+        <div>GitHub</div>
+        <div>Vercel</div>
+      </div>
+      <div class="tool-group">
+        <div class="label">Research</div>
+        <div>UserTesting</div>
+      </div>
+    </div>
+
+    <div class="block">
+      <h2>Languages</h2>
+      <div class="list">
+        <div>German (native)</div>
+        <div>English (fluent)</div>
+        <div>Spanish (B2)</div>
+      </div>
+    </div>
+
+  </aside>
+</div>
+</body>
+</html>
