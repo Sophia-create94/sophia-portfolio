@@ -214,8 +214,8 @@
 <div class="bar">
   <a href="/">← sophia-ux.com</a>
   <span class="bar-actions">
-    <a href="assets/sophia-mueller-cv.pdf" download="Sophia Müller — Senior Product Designer — CV.pdf">Download PDF ↓</a>
-    <button type="button" onclick="window.print()">Print</button>
+    <a href="assets/Sophia%20M%C3%BCller_Senior%20Product%20Designer_CV.pdf" download="Sophia Müller_Senior Product Designer_CV.pdf">Download PDF ↓</a>
+    <button type="button" onclick="printCV()">Print</button>
   </span>
 </div>
 
@@ -355,5 +355,19 @@
 
   </aside>
 </div>
+<script>
+  /* Print → "Save as PDF" uses document.title for the suggested filename.
+     Swap it to the desired CV filename just for printing, then restore the
+     real title (kept clean for the browser tab and SEO). */
+  function printCV(){
+    var orig = document.title;
+    document.title = 'Sophia Müller_Senior Product Designer_CV';
+    window.addEventListener('afterprint', function restore(){
+      document.title = orig;
+      window.removeEventListener('afterprint', restore);
+    });
+    window.print();
+  }
+</script>
 </body>
 </html>
